@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Font Awesome for the 'i' icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-black p-6 text-white">
+  <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-6">
+    <h1 class="text-2xl font-bold mb-4">Checklist</h1>
+
+    <!-- Dropdown Menus in Horizontal Layout -->
+    <div class="flex space-x-4 mb-4">
+      <div class="w-1/3">
+        <label class="block text-gray-300 font-medium mb-2">Select Company:</label>
+        <select class="w-full p-2 border rounded-md bg-gray-700 text-white">
+          <option>Select Company</option>
+          <option>SAMEDAY</option>
+          <option>Company B</option>
+        </select>
+      </div>
+      <div class="w-1/3">
+        <label class="block text-gray-300 font-medium mb-2">Select AHJ:</label>
+        <select id="ahjDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
+          <option>Select AHJ</option>
+          <option>AHJ A</option>
+          <option>AHJ B</option>
+          <option>Fresno</option>
+        </select>
+      </div>
+      <div class="w-1/3">
+        <label class="block text-gray-300 font-medium mb-2">Select Utility:</label>
+        <select class="w-full p-2 border rounded-md bg-gray-700 text-white">
+          <option>Select Utility</option>
+          <option>Utility A</option>
+          <option>Utility B</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Checklist -->
+    <div class="mb-6">
+      <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
+      <ul id="checklist" class="space-y-2">
+        <li><label><input type="checkbox" class="mr-2">FILL OUT DWG PROPS UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">AZIMUTH UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">DRAW HOUSE</label></li>
+        <li><label><input type="checkbox" class="mr-2">PROPERTY LINE</label></li>
+        <li><label><input type="checkbox" class="mr-2">FENCE</label></li>
+        <li><label><input type="checkbox" class="mr-2">DRIVEWAY</label></li>
+        <li><label><input type="checkbox" class="mr-2">PROPERTY DIMENSION</label></li>
+        <li><label><input type="checkbox" class="mr-2">FIRE SETBACKS</label></li>
+        <li id="ridgeSetback" class="hidden ml-6"><label><input type="checkbox" class="mr-2">36" RIDGE SETBACKS ARE REQUIRED</label></li>
+        <li><label><input type="checkbox" class="mr-2">RAFTERS</label></li>
+        <li><label><input type="checkbox" class="mr-2">MODULES</label></li>
+        <li><label><input type="checkbox" class="mr-2">ATTACHMENTS</label></li>
+        <li><label><input type="checkbox" class="mr-2">USE COUNT ATTACHMENTS UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
+        <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      <h2 class="text-xl font-medium mb-3">PV1:</h2>
+    <li><label><input type="checkbox" class="mr-2">SELECT CORRECT PROJECT DATA DROPDOWN UTC</label></li>
+    <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS REMOVE MANUALLY EDIT THE ROW BELOW THE BATTERY NAME 
+      <a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
+        <i class="fas fa-info-circle"></i> 
+      </a>
+    </label></li>
+    <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
+    </div>
+
+    <!-- Reset Button -->
+    <button
+      id="resetButton"
+      class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+      Reset
+    </button>
+  </div>
+
+  <script>
+    // JavaScript to handle the reset button functionality
+    document.getElementById('resetButton').addEventListener('click', () => {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => checkbox.checked = false);
+    });
+
+    // JavaScript to handle AHJ selection and add ridge setbacks when Fresno is selected
+    document.getElementById('ahjDropdown').addEventListener('change', (event) => {
+      const ridgeSetback = document.getElementById('ridgeSetback');
+      if (event.target.value === 'Fresno') {
+        ridgeSetback.classList.remove('hidden');
+      } else {
+        ridgeSetback.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
