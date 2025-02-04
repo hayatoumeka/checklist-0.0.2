@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checklist</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Include Font Awesome for the 'i' icon -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -13,14 +12,14 @@
   <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-6">
     <h1 class="text-2xl font-bold mb-4">Checklist</h1>
 
-    <!-- Dropdown Menus in Horizontal Layout -->
     <div class="flex space-x-4 mb-4">
       <div class="w-1/3">
         <label class="block text-gray-300 font-medium mb-2">Select Company:</label>
-        <select class="w-full p-2 border rounded-md bg-gray-700 text-white">
+        <select id="companyDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
           <option>Select Company</option>
           <option>SAMEDAY</option>
           <option>Company B</option>
+          <option>CITADEL</option>
         </select>
       </div>
       <div class="w-1/3">
@@ -42,7 +41,26 @@
       </div>
     </div>
 
-    <!-- Checklist -->
+    <div id="companyBestPractices" class="mb-6 hidden">
+      <h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Snap N Rack UR40 Black Rail, end clamps, and mid clamps.</li>
+        <li>Please shoot for the contracted amount of MCIs, usually dividing the number of mods by 2 and rounding up when needed.</li>
+        <li>We do NOT install on: CALPAC/Stone Coated Steel roofs.</li>
+        <li>We DO install on:
+          <ul class="list-disc ml-6 space-y-2">
+            <li>Comp shingle – Snap N Rack L Foot and Flashing.</li>
+            <li>Flat Concrete – Snap N Rack Tile Hook.</li>
+            <li>Curved (S/W) Concrete Tile - Snap N Rack Adjustable Tile Hook.</li>
+            <li>TPO - Snap N Rack Omnibase and Omnishield.</li>
+            <li>Rolled Comp/Torchdown - Snap N Rack Omnibase and Omnishield.</li>
+            <li>PVC - Snap N Rack Omnibase and Omnishield.</li>
+            <li>Tar and Gravel (sometimes) - Snap N Rack Omnibase and Omnishield.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
     <div class="mb-6">
       <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
       <ul id="checklist" class="space-y-2">
@@ -62,14 +80,6 @@
         <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
         <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
         <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      <h2 class="text-xl font-medium mb-3">PV1:</h2>
-    <li><label><input type="checkbox" class="mr-2">SELECT CORRECT PROJECT DATA DROPDOWN UTC</label></li>
-    <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS REMOVE MANUALLY EDIT THE ROW BELOW THE BATTERY NAME 
-      <a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
-        <i class="fas fa-info-circle"></i> 
-      </a>
-    </label></li>
-    <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
       </ul>
     </div>
 
@@ -82,21 +92,21 @@
   </div>
 
   <script>
-    // JavaScript to handle the reset button functionality
+    // Reset checkboxes
     document.getElementById('resetButton').addEventListener('click', () => {
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => checkbox.checked = false);
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
     });
 
-    // JavaScript to handle AHJ selection and add ridge setbacks when Fresno is selected
+    // Show ridge setbacks when Fresno is selected
     document.getElementById('ahjDropdown').addEventListener('change', (event) => {
-      const ridgeSetback = document.getElementById('ridgeSetback');
-      if (event.target.value === 'Fresno') {
-        ridgeSetback.classList.remove('hidden');
-      } else {
-        ridgeSetback.classList.add('hidden');
-      }
+      document.getElementById('ridgeSetback').classList.toggle('hidden', event.target.value !== 'Fresno');
+    });
+
+    // Show Company Best Practices for Citadel
+    document.getElementById('companyDropdown').addEventListener('change', (event) => {
+      document.getElementById('companyBestPractices').classList.toggle('hidden', event.target.value !== 'CITADEL');
     });
   </script>
+
 </body>
 </html>
