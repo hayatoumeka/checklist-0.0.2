@@ -12,12 +12,14 @@
   <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-6">
     <h1 class="text-2xl font-bold mb-4">Checklist</h1>
 
+    <!-- Dropdown Menus -->
     <div class="flex space-x-4 mb-4">
       <div class="w-1/3">
         <label class="block text-gray-300 font-medium mb-2">Select Company:</label>
         <select id="companyDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
           <option>Select Company</option>
           <option>SAMEDAY</option>
+          <option>Company B</option>
           <option>CITADEL</option>
         </select>
       </div>
@@ -25,6 +27,8 @@
         <label class="block text-gray-300 font-medium mb-2">Select AHJ:</label>
         <select id="ahjDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
           <option>Select AHJ</option>
+          <option>AHJ A</option>
+          <option>AHJ B</option>
           <option>Fresno</option>
         </select>
       </div>
@@ -38,26 +42,29 @@
       </div>
     </div>
 
-    <div id="companyBestPractices" class="mb-6 hidden">
+    <!-- Company Best Practices Section -->
+    <div id="companyBestPractices" class="hidden mb-6">
       <h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Snap N Rack UR40 Black Rail, end clamps, and mid clamps.</li>
-        <li>Please shoot for the contracted amount of MCIs, usually dividing the number of mods by 2 and rounding up when needed.</li>
-        <li>We do NOT install on: CALPAC/Stone Coated Steel roofs.</li>
-        <li>We DO install on:
-          <ul class="list-disc ml-6 space-y-2">
-            <li>Comp shingle – Snap N Rack L Foot and Flashing.</li>
-            <li>Flat Concrete – Snap N Rack Tile Hook.</li>
-            <li>Curved (S/W) Concrete Tile - Snap N Rack Adjustable Tile Hook.</li>
-            <li>TPO - Snap N Rack Omnibase and Omnishield.</li>
-            <li>Rolled Comp/Torchdown - Snap N Rack Omnibase and Omnishield.</li>
-            <li>PVC - Snap N Rack Omnibase and Omnishield.</li>
-            <li>Tar and Gravel (sometimes) - Snap N Rack Omnibase and Omnishield.</li>
-          </ul>
-        </li>
+      <ul class="space-y-2">
+        <li><label>Snap N Rack UR40 Black Rail, end clamps, and mid clamps.</label></li>
+        <li><label>Please shoot for the contracted amount of MCIs, which is usually just dividing the number of mods by 2 and rounding up when needed.</label></li>
+        <li><label class="text-red-500">We do NOT install on: CALPAC/Stone Coated Steel roofs</label></li>
+        <li><label>We DO install on:</label></li>
+        <ul class="ml-6 space-y-1">
+          <li>Comp shingle – Snap N Rack L Foot and Flashing</li>
+          <li>Flat Concrete – Snap N Rack Tile Hook</li>
+          <li>Curved (S/W) Concrete Tile - Snap N Rack Adjustable Tile Hook</li>
+          <li>TPO - Snap N Rack Omnibase and Omnishield</li>
+          <li>Rolled Comp/Torchdown - Snap N Rack Omnibase and Omnishield</li>
+          <li>PVC - Snap N Rack Omnibase and Omnishield</li>
+          <li>Tar and Gravel - Snap N Rack Omnibase and Omnishield (sometimes install)</li>
+        </ul>
+        <li>Snap N Rack Tilt Kit as needed/called out. If there is an obvious interrow spacing between the PV modules (18” is typical) on a flat/low-slope roof, odds are it needs a tilt.</li>
+        <li>For vaulted ceilings, we use Snap N Rack Omnibase and Omnishield to attach to the decking, but if it is comp shingle and has a pitch, we will use Zilla plates and flashings to attach to the decking.</li>
       </ul>
     </div>
 
+    <!-- Model Space Section -->
     <div class="mb-6">
       <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
       <ul id="checklist" class="space-y-2">
@@ -77,33 +84,82 @@
         <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
         <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
         <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </ul>
-    </div>
+	</a>
+    <h2 class="text-xl font-medium mb-3">PV0:</h2>
+        <li><label><input type="checkbox" class="mr-2">SELECT CORRECT PROJECT DATA DROPDOWN UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS EDIT THE ROW BELOW THE BATTERY NAME. DON'T LEAVE BLANK<a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
+            <i class="fas fa-info-circle"></i> 
+	</a>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
+	</a>
+    <h2 class="text-xl font-medium mb-3">PV1:</h2>
+	<li><label><input type="checkbox" class="mr-2">UPDATE SITE NOTES</label></li> 
+	<li><label><input type="checkbox" class="mr-2">BLOWUP VIEW</label></li>
+	<li><label><input type="checkbox" class="mr-2">TURN OFF THE LAYERS THAT ARE NOT REQUIRED TO BE DISPLAYED IN THE BLOW-UP VIEW.</label></li>
+	<li><label><input type="checkbox" class="mr-2">EQUIPMENT ICON CALLOUT (ENSURE THE MODEL AND PART NUMBER ARE SHOWN)</label></li>
+	<li><label><input type="checkbox" class="mr-2">MODULE CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">DRIVEWAY LABEL</label></li>
+	<li><label><input type="checkbox" class="mr-2">PROPERTY LINE LABEL</label></li>
+	<li><label><input type="checkbox" class="mr-2">STREET NAME LABEL</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </a>
+    <h2 class="text-xl font-medium mb-3">PV2</h2>
+	<li><label><input type="checkbox" class="mr-2">LEGEND</label></li>
+	<li><label><input type="checkbox" class="mr-2">ROOF CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">MICROINVERTER/OPTIMIZER/MCI CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">FIRE ACCESS POINT CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">RAILS CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">ATTACHMENT CALLOUT</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </a>
+    <h2 class="text-xl font-medium mb-3">PV3</h2>
+	<li><label><input type="checkbox" class="mr-2">ATTACH THE CORRECT ATTACHMENT DWG</label></li>
+	<li><label><input type="checkbox" class="mr-2">UPDATE THE CALLOUTS ON THE DWG FILE IF NEEDED (EX.ROOF TYPE CALLOUT)</label></li>
+	<li><label><input type="checkbox" class="mr-2">IS THE SCREW LENGTH CORRECT?</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </a>
+    <h2 class="text-xl font-medium mb-3">PV4</h2>
+	<li><label><input type="checkbox" class="mr-2">WIRE TABLE</label></li>
+	<li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
+	<li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
+	<li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </a>
+    <h2 class="text-xl font-medium mb-3">PV5</h2>
+	<li><label><input type="checkbox" class="mr-2">LABEL 10</label></li>
+	<li><label><input type="checkbox" class="mr-2">LABEL 13</label></li>
+	<li><label><input type="checkbox" class="mr-2">LABEL 15</label></li>
+	<li><label><input type="checkbox" class="mr-2">PLACARD ROTATION UTC</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </a>
+    <h2 class="text-xl font-medium mb-3">POST CAD</h2>
+	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET NAME</label></li>
+	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET INDEX</label></li>
+	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+	<li><label><input type="checkbox" class="mr-2">SPEC SHEETS</label></li>
+      </a>
 
     <!-- Reset Button -->
-    <button
-      id="resetButton"
-      class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+    <button id="resetButton" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
       Reset
     </button>
   </div>
 
   <script>
-    // Reset checkboxes
+    // Handle Reset Button
     document.getElementById('resetButton').addEventListener('click', () => {
       document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
     });
 
-    // Show ridge setbacks when Fresno is selected
+    // Show Ridge Setbacks when Fresno is selected
     document.getElementById('ahjDropdown').addEventListener('change', (event) => {
       document.getElementById('ridgeSetback').classList.toggle('hidden', event.target.value !== 'Fresno');
     });
 
-    // Show Company Best Practices for Citadel
+    // Show Company Best Practices when Citadel is selected
     document.getElementById('companyDropdown').addEventListener('change', (event) => {
       document.getElementById('companyBestPractices').classList.toggle('hidden', event.target.value !== 'CITADEL');
     });
   </script>
-
 </body>
 </html>
