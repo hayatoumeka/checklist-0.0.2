@@ -1,0 +1,16 @@
+{
+    "companies": ["CITADEL", "NORTH VALLEY", "xxxx"],
+    "ahjs": ["Fresno", "Los Angeles", "San Diego"],
+    "utilities": ["PG&E", "SCE", "SDG&E"],
+    "ahj_requirements": {
+        "Fresno": {
+            "fire_setbacks": "36\" setbacks required on ridges"
+        },
+        "Los Angeles": {
+            "fire_setbacks": "24\" setbacks required"
+        },  
+        "San Diego": {
+            "fire_setbacks": "No specific setbacks"
+        }
+    }
+}
