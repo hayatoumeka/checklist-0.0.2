@@ -1,166 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checklist</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #1e1e1e; color: #dcdcdc; }
+        .container { max-width: 100%; margin: 0; padding: 20px; }
+        .section { margin-bottom: 15px; }
+        .dropdowns { display: flex; gap: 10px; margin-bottom: 15px; align-items: center; }
+        .checklist-container { display: flex; flex-direction: column; gap: 3px; }
+        .checklist-item { display: flex; align-items: center; gap: 5px; }
+        label { font-size: 14px; }
+        h4 { margin-bottom: 5px; color: #f0f0f0; }
+        button { margin-top: 10px; padding: 5px 10px; background-color: #444; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #666; }
+        select { background-color: #333; color: white; border: none; padding: 5px; }
+    </style>
 </head>
-
-<body class="bg-black p-6 text-white">
-  <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-6">
-    <h1 class="text-2xl font-bold mb-4">Checklist</h1>
-
-    <!-- Dropdown Menus -->
-    <div class="flex space-x-4 mb-4">
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select Company:</label>
-        <select id="companyDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
-          <option>Select Company</option>
-          <option>SAMEDAY</option>
-          <option>Company B</option>
-          <option>CITADEL</option>
-        </select>
-      </div>
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select AHJ:</label>
-        <select id="ahjDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-white">
-          <option>Select AHJ</option>
-          <option>AHJ A</option>
-          <option>AHJ B</option>
-          <option>Fresno</option>
-        </select>
-      </div>
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select Utility:</label>
-        <select class="w-full p-2 border rounded-md bg-gray-700 text-white">
-          <option>Select Utility</option>
-          <option>Utility A</option>
-          <option>Utility B</option>
-        </select>
-      </div>
+<body>
+    <div class="container">
+        <h2>Checklist</h2>
+        
+        <div class="dropdowns">
+            <div class="section">
+                <label for="company">Company:</label>
+                <select id="company">
+                    <option selected disabled>COMPANY</option>
+                    <option value="CITADEL">CITADEL</option>
+                    <option value="NORTH VALLEY">NORTH VALLEY</option>
+                    <option value="xxxx">xxxx</option>
+                </select>
+            </div>
+            
+            <div class="section">
+                <label for="ahj">AHJ (State):</label>
+                <select id="ahj" onchange="updateFireSetback()">
+                    <option selected disabled>AHJ</option>
+                    <option value="Fresno">Fresno</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="San Diego">San Diego</option>
+                </select>
+            </div>
+            
+            <div class="section">
+                <label for="utility">Utility:</label>
+                <select id="utility">
+                    <option selected disabled>UTILITY</option>
+                    <option value="PG&E">PG&E</option>
+                    <option value="SCE">SCE</option>
+                    <option value="SDG&E">SDG&E</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Checklist</h3>
+            <form id="checklist-form">
+                <div id="checklist" class="checklist-container"></div>
+                <button type="button" onclick="resetChecklist()">Reset</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Company Best Practices Section -->
-    <div id="companyBestPractices" class="hidden mb-6">
-      <h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-      <ul class="space-y-2">
-        <li><label>Snap N Rack UR40 Black Rail, end clamps, and mid clamps.</label></li>
-        <li><label>Please shoot for the contracted amount of MCIs, which is usually just dividing the number of mods by 2 and rounding up when needed.</label></li>
-        <li><label class="text-red-500">We do NOT install on: CALPAC/Stone Coated Steel roofs</label></li>
-        <li><label>We DO install on:</label></li>
-        <ul class="ml-6 space-y-1">
-          <li>Comp shingle – Snap N Rack L Foot and Flashing</li>
-          <li>Flat Concrete – Snap N Rack Tile Hook</li>
-          <li>Curved (S/W) Concrete Tile - Snap N Rack Adjustable Tile Hook</li>
-          <li>TPO - Snap N Rack Omnibase and Omnishield</li>
-          <li>Rolled Comp/Torchdown - Snap N Rack Omnibase and Omnishield</li>
-          <li>PVC - Snap N Rack Omnibase and Omnishield</li>
-          <li>Tar and Gravel - Snap N Rack Omnibase and Omnishield (sometimes install)</li>
-        </ul>
-        <li>Snap N Rack Tilt Kit as needed/called out. If there is an obvious interrow spacing between the PV modules (18” is typical) on a flat/low-slope roof, odds are it needs a tilt.</li>
-        <li>For vaulted ceilings, we use Snap N Rack Omnibase and Omnishield to attach to the decking, but if it is comp shingle and has a pitch, we will use Zilla plates and flashings to attach to the decking.</li>
-      </ul>
-    </div>
+    <script>
+        let checklistItems = {
+            "MODEL SPACE": [
+                "FILL OUT DWG PROPS UTC", "AZIMUTH UTC", "DRAW HOUSE", "PROPERTY LINE",
+                "FENCE", "DRIVEWAY", "PROPERTY DIMENSION", "FIRE SETBACKS", "RAFTERS", "MODULES",
+                "ATTACHMENTS", "USE COUNT ATTACHMENTS UTC", "EQUIPMENT ICONS", "CONDUIT", "AHJ NOTES"
+            ],
+            "PV0": ["SELECT CORRECT PROJECT DATA DROPDOWN UTC", "AHJ NOTES"],
+            "PV1": ["UPDATE SITE NOTES", "BLOWUP VIEW", "AHJ NOTES"],
+            "PV2": ["LEGEND", "ROOF CALLOUT", "AHJ NOTES"],
+            "PVA": ["ADD NO DWELLING WINDOWS AND DOORS NOTE IF NEEDED"],
+            "PV3": ["ATTACH THE CORRECT ATTACHMENT DWG", "AHJ NOTES"],
+            "PV4": ["WIRE TABLE", "GROUNDING LABEL", "AHJ NOTES"],
+            "PV5": ["LABEL 10", "LABEL 13", "AHJ NOTES"],
+            "POST CAD": ["UPDATE SHEET NAME", "AHJ NOTES", "SPEC SHEETS"]
+        };
 
-    <!-- Model Space Section -->
-    <div class="mb-6">
-      <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
-      <ul id="checklist" class="space-y-2">
-        <li><label><input type="checkbox" class="mr-2">FILL OUT DWG PROPS UTC</label></li>
-        <li><label><input type="checkbox" class="mr-2">AZIMUTH UTC</label></li>
-        <li><label><input type="checkbox" class="mr-2">DRAW HOUSE</label></li>
-        <li><label><input type="checkbox" class="mr-2">PROPERTY LINE</label></li>
-        <li><label><input type="checkbox" class="mr-2">FENCE</label></li>
-        <li><label><input type="checkbox" class="mr-2">DRIVEWAY</label></li>
-        <li><label><input type="checkbox" class="mr-2">PROPERTY DIMENSION</label></li>
-        <li><label><input type="checkbox" class="mr-2">FIRE SETBACKS</label></li>
-        <li id="ridgeSetback" class="hidden ml-6"><label><input type="checkbox" class="mr-2">36" RIDGE SETBACKS ARE REQUIRED</label></li>
-        <li><label><input type="checkbox" class="mr-2">RAFTERS</label></li>
-        <li><label><input type="checkbox" class="mr-2">MODULES</label></li>
-        <li><label><input type="checkbox" class="mr-2">ATTACHMENTS</label></li>
-        <li><label><input type="checkbox" class="mr-2">USE COUNT ATTACHMENTS UTC</label></li>
-        <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
-        <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
-        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-	</a>
-    <h2 class="text-xl font-medium mb-3">PV0:</h2>
-        <li><label><input type="checkbox" class="mr-2">SELECT CORRECT PROJECT DATA DROPDOWN UTC</label></li>
-        <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS EDIT THE ROW BELOW THE BATTERY NAME. DON'T LEAVE BLANK<a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
-            <i class="fas fa-info-circle"></i> 
-	</a>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
-	</a>
-    <h2 class="text-xl font-medium mb-3">PV1:</h2>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SITE NOTES</label></li> 
-	<li><label><input type="checkbox" class="mr-2">BLOWUP VIEW</label></li>
-	<li><label><input type="checkbox" class="mr-2">TURN OFF THE LAYERS THAT ARE NOT REQUIRED TO BE DISPLAYED IN THE BLOW-UP VIEW.</label></li>
-	<li><label><input type="checkbox" class="mr-2">EQUIPMENT ICON CALLOUT (ENSURE THE MODEL AND PART NUMBER ARE SHOWN)</label></li>
-	<li><label><input type="checkbox" class="mr-2">MODULE CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">DRIVEWAY LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">PROPERTY LINE LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">STREET NAME LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV2</h2>
-	<li><label><input type="checkbox" class="mr-2">LEGEND</label></li>
-	<li><label><input type="checkbox" class="mr-2">ROOF CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">MICROINVERTER/OPTIMIZER/MCI CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">FIRE ACCESS POINT CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">RAILS CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">ATTACHMENT CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV3</h2>
-	<li><label><input type="checkbox" class="mr-2">ATTACH THE CORRECT ATTACHMENT DWG</label></li>
-	<li><label><input type="checkbox" class="mr-2">UPDATE THE CALLOUTS ON THE DWG FILE IF NEEDED (EX.ROOF TYPE CALLOUT)</label></li>
-	<li><label><input type="checkbox" class="mr-2">IS THE SCREW LENGTH CORRECT?</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV4</h2>
-	<li><label><input type="checkbox" class="mr-2">WIRE TABLE</label></li>
-	<li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
-	<li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
-	<li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
-	<li><label><input type="checkbox" class="mr-2">GROUNDING LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV5</h2>
-	<li><label><input type="checkbox" class="mr-2">LABEL 10</label></li>
-	<li><label><input type="checkbox" class="mr-2">LABEL 13</label></li>
-	<li><label><input type="checkbox" class="mr-2">LABEL 15</label></li>
-	<li><label><input type="checkbox" class="mr-2">PLACARD ROTATION UTC</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">POST CAD</h2>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET NAME</label></li>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET INDEX</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-	<li><label><input type="checkbox" class="mr-2">SPEC SHEETS</label></li>
-      </a>
+        function generateChecklist() {
+            const checklistContainer = document.getElementById('checklist');
+            checklistContainer.innerHTML = '';
 
-    <!-- Reset Button -->
-    <button id="resetButton" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
-      Reset
-    </button>
-  </div>
+            for (const [section, items] of Object.entries(checklistItems)) {
+                const sectionTitle = document.createElement('h4');
+                sectionTitle.textContent = section;
+                checklistContainer.appendChild(sectionTitle);
 
-  <script>
-    // Handle Reset Button
-    document.getElementById('resetButton').addEventListener('click', () => {
-      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
-    });
+                items.forEach((item, index) => {
+                    const label = document.createElement('label');
+                    label.classList.add('checklist-item');
 
-    // Show Ridge Setbacks when Fresno is selected
-    document.getElementById('ahjDropdown').addEventListener('change', (event) => {
-      document.getElementById('ridgeSetback').classList.toggle('hidden', event.target.value !== 'Fresno');
-    });
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.name = item;
 
-    // Show Company Best Practices when Citadel is selected
-    document.getElementById('companyDropdown').addEventListener('change', (event) => {
-      document.getElementById('companyBestPractices').classList.toggle('hidden', event.target.value !== 'CITADEL');
-    });
-  </script>
+                    label.appendChild(checkbox);
+                    label.appendChild(document.createTextNode(item));
+
+                    // Insert a placeholder for fire setbacks in "MODEL SPACE"
+                    if (section === "MODEL SPACE" && item === "CONDUIT") {
+                        const fireSetbackItem = document.createElement('label');
+                        fireSetbackItem.classList.add('checklist-item');
+                        fireSetbackItem.id = "fire-setback"; // ID for updating dynamically
+                        fireSetbackItem.appendChild(document.createTextNode(""));
+                        checklistContainer.appendChild(fireSetbackItem);
+                    }
+
+                    checklistContainer.appendChild(label);
+                });
+            }
+        }
+
+        function updateFireSetback() {
+            const ahjSelected = document.getElementById("ahj").value;
+            
+            fetch("data.json")
+                .then(response => response.json())
+                .then(data => {
+                    const fireSetbackMessage = data[ahjSelected]?.fire_setbacks || "";
+
+                    // Update the dynamically added fire setback field
+                    const fireSetbackElement = document.getElementById("fire-setback");
+                    if (fireSetbackElement) {
+                        fireSetbackElement.textContent = fireSetbackMessage;
+                    }
+                })
+                .catch(error => console.error("Error loading JSON:", error));
+        }
+
+        function resetChecklist() {
+            document.getElementById('checklist-form').reset();
+        }
+
+        window.onload = generateChecklist;
+    </script>
 </body>
 </html>
