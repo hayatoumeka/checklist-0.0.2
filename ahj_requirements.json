@@ -1,0 +1,17 @@
+{
+    "Fresno": {
+        "MODEL SPACE": ["36\" setbacks required on ridges"],
+        "PV4": ["xxx"],
+        "PV5": ["xx"]
+    },
+    "San Diego": {
+        "MODEL SPACE": ["xxxx"],
+        "PV4": ["xxx"],
+        "PV5": ["xxx"]
+    },
+    "Los Angeles": {
+        "MODEL SPACE": ["xxx"],
+        "PV4": ["xxx"],
+        "PV5": ["xxx"]
+    }
+}
