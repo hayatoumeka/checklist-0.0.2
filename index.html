@@ -69,10 +69,35 @@
 	<ul class="space-y-2">
 	  <li><label>If proposed panel placement does not fit. Move the excess mods to the next best sun exposed area</label></li>
 	  <li><label>60A Eaton ACD as minimum they don't use 30A</label></li>
+	  <li><label>Racking - Ironridge Aire A1, Tile - All Tile Hook, Comp shingle - Halo Ultragrip </label></li>
       </ul>
     </div>
 
-    <!-- Model Space Section -->
+
+     <div id="SameDayCompanyBestPractices" class="hidden mb-6">
+	<h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
+	<ul class="space-y-2">
+	  <li><label>Racking - IRONRIDGE XR10 </label></li>
+	  <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
+	  <li><label>BOM:</label></li>
+	  <li><label>ATTACHMENT:IRONRIDGE QM-HUG-01-B1 HALO ULTRA GRIP</label></li>
+	  <li><label>SCREWS:HW-RD1430-01-M1 RD STRUCTURAL SCREW 3.0L (FOR COMP SHINGLE ROOF)</label></li>
+	  <li><label>MID CLAMP:UFO-CL-01-B1, Universal Module Clamp, Black</label></li>
+	  <li><label>END CLAMP:UFO-END-01-B1, Universal End Clamp, Black</label></li>
+      </ul>
+    </div>
+
+     <div id="ThriveCompanyBestPractices" class="hidden mb-6">
+	<h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
+	<ul class="space-y-2">
+	  <li><label>Racking - Unirac NXT </label></li>
+	  <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
+      </ul>
+    </div>
+
+
+	  
+   <!-- Model Space Section -->
     <div class="mb-6">
       <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
       <ul id="checklist" class="space-y-2">
@@ -180,6 +205,8 @@
        const selectedCompany = event.target.value;
        document.getElementById('CitadelCompanyBestPractices').classList.toggle('hidden', selectedCompany !== 'CITADEL');
        document.getElementById('NorthValleyCompanyBestPractices').classList.toggle('hidden', selectedCompany !== 'NORTH VALLEY');
+       document.getElementById('ThriveCompanyBestPractices').classList.toggle('hidden', selectedCompany !== 'THRIVE');
+       document.getElementById('SameDayCompanyBestPractices').classList.toggle('hidden', selectedCompany !== 'SAMEDAY');
    });
 
    // Show PG&E Requirements when PG&E is selected
