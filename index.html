@@ -9,23 +9,23 @@
 </head>
 
 <body class="bg-black p-6 text-white">
-  <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-6">
-    <h1 class="text-2xl font-bold mb-4">Checklist</h1>
+  <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+    <h1 class="text-2xl font-bold mb-4 text-left">Checklist</h1>
 
     <!-- Dropdown Menus -->
-    <div class="flex space-x-4 mb-4">
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select Company:</label>
+    <div class="flex space-x-4 mb-6">
+      <div class="w-1/4">
+        <label class="block text-gray-300 font-medium mb-2 text-sm">Select Company:</label>
         <select id="companyDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-green-400">
           <option>Select Company</option>
           <option>SAMEDAY</option>
           <option>NORTH VALLEY</option>
           <option>CITADEL</option>
-	  <option>THRIVE</option>
+          <option>THRIVE</option>
         </select>
       </div>
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select AHJ:</label>
+      <div class="w-1/4">
+        <label class="block text-gray-300 font-medium mb-2 text-sm">Select AHJ:</label>
         <select id="ahjDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-blue-400">
           <option>Select AHJ</option>
           <option>AHJ A</option>
@@ -33,18 +33,18 @@
           <option>Fresno</option>
         </select>
       </div>
-      <div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select Utility:</label>
+      <div class="w-1/4">
+        <label class="block text-gray-300 font-medium mb-2 text-sm">Select Utility:</label>
         <select id="utilityDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-red-400">
           <option>Select Utility</option>
           <option>PG&E</option>
           <option>Utility B</option>
         </select>
       </div>
-	<div class="w-1/3">
-        <label class="block text-gray-300 font-medium mb-2">Select Battery:</label>
+      <div class="w-1/4">
+        <label class="block text-gray-300 font-medium mb-2 text-sm">Select Battery:</label>
         <select id="BatteryDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-yellow-400">
-	  <option>Select Battery</option>
+          <option>Select Battery</option>
           <option>POWERWALL 3</option>
           <option>ENPHASE</option>
           <option>SOLAREDGE</option>
@@ -54,8 +54,8 @@
 
     <!-- Company Best Practices Section -->
     <div id="CitadelCompanyBestPractices" class="hidden mb-6">
-      <h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-      <ul class="space-y-2">
+      <h2 class="text-xl font-medium mb-3 text-left">COMPANY BEST PRACTICES:</h2>
+      <ul class="space-y-2 text-left text-sm">
         <li><label>Snap N Rack UR40 Black Rail, end clamps, and mid clamps.</label></li>
         <li><label>Please shoot for the contracted amount of MCIs, which is usually just dividing the number of mods by 2 and rounding up when needed.</label></li>
         <li><label class="text-red-500">We do NOT install on: CALPAC/Stone Coated Steel roofs</label></li>
@@ -74,42 +74,41 @@
       </ul>
     </div>
 
-     <div id="NorthValleyCompanyBestPractices" class="hidden mb-6">
-	<h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-	<ul class="space-y-2">
-	  <li><label>If proposed panel placement does not fit. Move the excess mods to the next best sun exposed area</label></li>
-	  <li><label>60A Eaton ACD as minimum they don't use 30A</label></li>
-	  <li><label>Racking - Ironridge Aire A1, Tile - All Tile Hook, Comp shingle - Halo Ultragrip </label></li>
+    <div id="NorthValleyCompanyBestPractices" class="hidden mb-6">
+      <h2 class="text-xl font-medium mb-3 text-left">COMPANY BEST PRACTICES:</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label>If proposed panel placement does not fit. Move the excess mods to the next best sun exposed area</label></li>
+        <li><label>60A Eaton ACD as minimum they don't use 30A</label></li>
+        <li><label>Racking - Ironridge Aire A1, Tile - All Tile Hook, Comp shingle - Halo Ultragrip </label></li>
       </ul>
     </div>
 
-
-     <div id="SameDayCompanyBestPractices" class="hidden mb-6">
-	<h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-	<ul class="space-y-2">
-	  <li><label>Racking - IRONRIDGE XR10 </label></li>
-	  <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
-	  <li><label>BOM:</label></li>
-	  <li><label>ATTACHMENT:IRONRIDGE QM-HUG-01-B1 HALO ULTRA GRIP</label></li>
-	  <li><label>SCREWS:HW-RD1430-01-M1 RD STRUCTURAL SCREW 3.0L (FOR COMP SHINGLE ROOF)</label></li>
-	  <li><label>MID CLAMP:UFO-CL-01-B1, Universal Module Clamp, Black</label></li>
-	  <li><label>END CLAMP:UFO-END-01-B1, Universal End Clamp, Black</label></li>
+    <div id="SameDayCompanyBestPractices" class="hidden mb-6">
+      <h2 class="text-xl font-medium mb-3 text-left">COMPANY BEST PRACTICES:</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label>Racking - IRONRIDGE XR10 </label></li>
+        <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
+        <li><label>BOM:</label></li>
+        <li><label>ATTACHMENT:IRONRIDGE QM-HUG-01-B1 HALO ULTRA GRIP</label></li>
+        <li><label>SCREWS:HW-RD1430-01-M1 RD STRUCTURAL SCREW 3.0L (FOR COMP SHINGLE ROOF)</label></li>
+        <li><label>MID CLAMP:UFO-CL-01-B1, Universal Module Clamp, Black</label></li>
+        <li><label>END CLAMP:UFO-END-01-B1, Universal End Clamp, Black</label></li>
       </ul>
     </div>
 
-     <div id="ThriveCompanyBestPractices" class="hidden mb-6">
-	<h2 class="text-xl font-medium mb-3">COMPANY BEST PRACTICES:</h2>
-	<ul class="space-y-2">
-	  <li><label>Racking - Unirac NXT </label></li>
-	  <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
-	  <li><label>SWITCH IS THE COMPANY LOGO FOR THRIVE</label></li>
+    <div id="ThriveCompanyBestPractices" class="hidden mb-6">
+      <h2 class="text-xl font-medium mb-3 text-left">COMPANY BEST PRACTICES:</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label>Racking - Unirac NXT </label></li>
+        <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
+        <li><label>SWITCH IS THE COMPANY LOGO FOR THRIVE</label></li>
       </ul>
     </div>
 
-   <!-- Model Space Section -->
+    <!-- Model Space Section -->
     <div class="mb-6">
-      <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
-      <ul id="checklist" class="space-y-2">
+      <h2 class="text-xl font-medium mb-3 text-left">MODEL SPACE:</h2>
+      <ul id="checklist" class="space-y-2 text-left text-sm">
         <li><label><input type="checkbox" class="mr-2">FILL OUT DWG PROPS UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">AZIMUTH UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">DRAW HOUSE</label></li>
@@ -118,83 +117,96 @@
         <li><label><input type="checkbox" class="mr-2">DRIVEWAY</label></li>
         <li><label><input type="checkbox" class="mr-2">PROPERTY DIMENSION</label></li>
         <li><label><input type="checkbox" class="mr-2">FIRE SETBACKS(30" AC, 36" WEATHER HEAD, 18" CHIMNEY) </label></li>
-        <li id="ridgeSetback" class="hidden ml-6"><label class="text-blue-500"><label><input type="checkbox" class="mr-2">36" RIDGE SETBACKS ARE REQUIRED</label></li>
+        <li id="ridgeSetback" class="hidden ml-6"><label class="text-blue-500"><input type="checkbox" class="mr-2">36" RIDGE SETBACKS ARE REQUIRED</label></li>
         <li><label><input type="checkbox" class="mr-2">RAFTERS</label></li>
         <li><label><input type="checkbox" class="mr-2">MODULES</label></li>
         <li><label><input type="checkbox" class="mr-2">ATTACHMENTS</label></li>
         <li><label><input type="checkbox" class="mr-2">USE COUNT ATTACHMENTS UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
-        <li id="BACKUPSWITCH" class="hidden ml-6"><label class="text-yellow-500"><label><input type="checkbox" class="mr-2">SEE REQUIREMENT FOR TESLA BACKUP SWITCH<a href="https://docs.google.com/presentation/d/1YzOKmeXQs2yAeo4BGXBlwUICOcQ69rST/edit?usp=drive_link&ouid=103890528928418308367&rtpof=true&sd=true" target="_blank" class="text-blue-500 ml-2">
+        <li id="BACKUPSWITCH" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">SEE REQUIREMENT FOR TESLA BACKUP SWITCH<a href="https://docs.google.com/presentation/d/1YzOKmeXQs2yAeo4BGXBlwUICOcQ69rST/edit?usp=drive_link&ouid=103890528928418308367&rtpof=true&sd=true" target="_blank" class="text-blue-500 ml-2">
             <i class="fas fa-info-circle"></i> 
-	</a>
+        </a></label></li>
         <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
         <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-	</a>
-    <h2 class="text-xl font-medium mb-3">PV0:</h2>
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV0:</h2>
+      <ul class="space-y-2 text-left text-sm">
         <li><label><input type="checkbox" class="mr-2">SELECT CORRECT PROJECT DATA DROPDOWN UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS EDIT THE ROW BELOW THE BATTERY NAME. DON'T LEAVE BLANK<a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
             <i class="fas fa-info-circle"></i> 
-	</a>
-	<li id="EXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><label><input type="checkbox" class="mr-2">FOR TESLA POWERWALL 3 WITH EXPANSION UNIT, MAKE SURE THE EXPANSION UNIT IS INCLUDED IN THE EQUIPMENT SUMMARY.</label></li>	
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
-	</a>
-    <h2 class="text-xl font-medium mb-3">PV1:</h2>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SITE NOTES</label></li> 
-	<li><label><input type="checkbox" class="mr-2">BLOWUP VIEW</label></li>
-	<li><label><input type="checkbox" class="mr-2">TURN OFF THE LAYERS THAT ARE NOT REQUIRED TO BE DISPLAYED IN THE BLOW-UP VIEW.</label></li>
-	<li><label><input type="checkbox" class="mr-2">EQUIPMENT ICON CALLOUT (ENSURE THE MODEL AND PART NUMBER ARE SHOWN)</label></li>
-	<li><label><input type="checkbox" class="mr-2">MODULE CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">DRIVEWAY LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">PROPERTY LINE LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">STREET NAME LABEL</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV2</h2>
-	<li><label><input type="checkbox" class="mr-2">LEGEND</label></li>
-	<li><label><input type="checkbox" class="mr-2">ROOF CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">MICROINVERTER/OPTIMIZER/MCI CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">FIRE ACCESS POINT CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">RAILS CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">ATTACHMENT CALLOUT</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
+        </a></label></li>
+        <li id="EXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">FOR TESLA POWERWALL 3 WITH EXPANSION UNIT, MAKE SURE THE EXPANSION UNIT IS INCLUDED IN THE EQUIPMENT SUMMARY.</label></li>	
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV1:</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">UPDATE SITE NOTES</label></li> 
+        <li><label><input type="checkbox" class="mr-2">BLOWUP VIEW</label></li>
+        <li><label><input type="checkbox" class="mr-2">TURN OFF THE LAYERS THAT ARE NOT REQUIRED TO BE DISPLAYED IN THE BLOW-UP VIEW.</label></li>
+        <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICON CALLOUT (ENSURE THE MODEL AND PART NUMBER ARE SHOWN)</label></li>
+        <li><label><input type="checkbox" class="mr-2">MODULE CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">DRIVEWAY LABEL</label></li>
+        <li><label><input type="checkbox" class="mr-2">PROPERTY LINE LABEL</label></li>
+        <li><label><input type="checkbox" class="mr-2">STREET NAME LABEL</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV2</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">LEGEND</label></li>
+        <li><label><input type="checkbox" class="mr-2">ROOF CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">MICROINVERTER/OPTIMIZER/MCI CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">FIRE ACCESS POINT CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">RAILS CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">ATTACHMENT CALLOUT</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
 
-    <h2 class="text-xl font-medium mb-3">PV2A</h2>
-	<li><label><input type="checkbox" class="mr-2">ADD NO DWELLING WINDOWS AND DOORS NOTE IF NEEDED</label>
-  	<a href="https://drive.google.com/file/d/1lFHzU82W5TK-HyH9Q5HI7y0mJ0UAIP5r/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
-    	<i class="fas fa-info-circle"></i>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV3</h2>
-	<li><label><input type="checkbox" class="mr-2">ATTACH THE CORRECT ATTACHMENT DWG</label></li>
-	<li><label><input type="checkbox" class="mr-2">UPDATE THE CALLOUTS ON THE DWG FILE IF NEEDED (EX.ROOF TYPE CALLOUT)</label></li>
-	<li><label><input type="checkbox" class="mr-2">IS THE SCREW LENGTH CORRECT?</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV4</h2>
-	<li><label><input type="checkbox" class="mr-2">WIRE TABLE</label></li>
-	<li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
-	<li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
-	<li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
-	<li><label><input type="checkbox" class="mr-2">GROUNDING LABEL</label></li>
-        <li id="PGandEnotepv4" class="hidden ml-6"><label><label class="text-red-500"><input type="checkbox" class="mr-2">Show PG&E NOTE</label><a href="https://drive.google.com/file/d/1y9ABytmc1Y7rJYURVy7kZC1-NqOJC7L9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
+      <h2 class="text-xl font-medium mb-3 text-left">PV2A</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">ADD NO DWELLING WINDOWS AND DOORS NOTE IF NEEDED</label>
+          <a href="https://drive.google.com/file/d/1lFHzU82W5TK-HyH9Q5HI7y0mJ0UAIP5r/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
+            <i class="fas fa-info-circle"></i>
+          </a>
+        </li>
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV3</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">ATTACH THE CORRECT ATTACHMENT DWG</label></li>
+        <li><label><input type="checkbox" class="mr-2">UPDATE THE CALLOUTS ON THE DWG FILE IF NEEDED (EX.ROOF TYPE CALLOUT)</label></li>
+        <li><label><input type="checkbox" class="mr-2">IS THE SCREW LENGTH CORRECT?</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV4</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">WIRE TABLE</label></li>
+        <li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
+        <li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
+        <li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
+        <li><label><input type="checkbox" class="mr-2">GROUNDING LABEL</label></li>
+        <li id="PGandEnotepv4" class="hidden ml-6"><label class="text-red-500"><input type="checkbox" class="mr-2">Show PG&E NOTE</label>
+          <a href="https://drive.google.com/file/d/1y9ABytmc1Y7rJYURVy7kZC1-NqOJC7L9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
             <i class="fas fa-info-circle"></i> 
-      </a>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-    <h2 class="text-xl font-medium mb-3">PV5</h2>
-	<li><label><input type="checkbox" class="mr-2">LABEL 10</label></li>
-	<li><label><input type="checkbox" class="mr-2">LABEL 13</label></li>
-	<li><label><input type="checkbox" class="mr-2">LABEL 15</label></li>
-	<li><label><input type="checkbox" class="mr-2">PLACARD ROTATION UTC</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-      </a>
-		
-    <h2 class="text-xl font-medium mb-3">POST CAD</h2>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET NAME</label></li>
-	<li><label><input type="checkbox" class="mr-2">UPDATE SHEET INDEX</label></li>
-	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
-	<li><label><input type="checkbox" class="mr-2">SPEC SHEETS</label></li>
-      </a>
+          </a>
+        </li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
+      <h2 class="text-xl font-medium mb-3 text-left">PV5</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">LABEL 10</label></li>
+        <li><label><input type="checkbox" class="mr-2">LABEL 13</label></li>
+        <li><label><input type="checkbox" class="mr-2">LABEL 15</label></li>
+        <li><label><input type="checkbox" class="mr-2">PLACARD ROTATION UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+      </ul>
+        
+      <h2 class="text-xl font-medium mb-3 text-left">POST CAD</h2>
+      <ul class="space-y-2 text-left text-sm">
+        <li><label><input type="checkbox" class="mr-2">UPDATE SHEET NAME</label></li>
+        <li><label><input type="checkbox" class="mr-2">UPDATE SHEET INDEX</label></li>
+        <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
+        <li><label><input type="checkbox" class="mr-2">SPEC SHEETS</label></li>
+      </ul>
+    </div>
 
     <!-- Reset Button -->
     <button id="resetButton" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
