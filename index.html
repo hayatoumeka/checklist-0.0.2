@@ -21,6 +21,7 @@
           <option>SAMEDAY</option>
           <option>NORTH VALLEY</option>
           <option>CITADEL</option>
+	  <option>THRIVE</option>
         </select>
       </div>
       <div class="w-1/3">
@@ -38,6 +39,14 @@
           <option>Select Utility</option>
           <option>PG&E</option>
           <option>Utility B</option>
+        </select>
+      </div>
+	<div class="w-1/3">
+        <label class="block text-gray-300 font-medium mb-2">Select Battery:</label>
+        <select id="utilityDropdown" class="w-full p-2 border rounded-md bg-gray-700 text-red-400">
+          <option>POWERWALL 3</option>
+          <option>ENPHASE</option>
+          <option>SOLAREDGE</option>
         </select>
       </div>
     </div>
@@ -92,11 +101,10 @@
 	<ul class="space-y-2">
 	  <li><label>Racking - Unirac NXT </label></li>
 	  <li><label>Comp Shingle, Flat Roof, Standing Seam(If the screws can be embedded in rafter)- Stronghold Butyl</label></li>
+	  <li><label>SWITCH IS THE COMPANY LOGO FOR THRIVE</label></li>
       </ul>
     </div>
 
-
-	  
    <!-- Model Space Section -->
     <div class="mb-6">
       <h2 class="text-xl font-medium mb-3">MODEL SPACE:</h2>
@@ -108,13 +116,16 @@
         <li><label><input type="checkbox" class="mr-2">FENCE</label></li>
         <li><label><input type="checkbox" class="mr-2">DRIVEWAY</label></li>
         <li><label><input type="checkbox" class="mr-2">PROPERTY DIMENSION</label></li>
-        <li><label><input type="checkbox" class="mr-2">FIRE SETBACKS</label></li>
+        <li><label><input type="checkbox" class="mr-2">FIRE SETBACKS(30" AC, 36" WEATHER HEAD, 18" CHIMNEY) </label></li>
         <li id="ridgeSetback" class="hidden ml-6"><label class="text-blue-500"><label><input type="checkbox" class="mr-2">36" RIDGE SETBACKS ARE REQUIRED</label></li>
         <li><label><input type="checkbox" class="mr-2">RAFTERS</label></li>
         <li><label><input type="checkbox" class="mr-2">MODULES</label></li>
         <li><label><input type="checkbox" class="mr-2">ATTACHMENTS</label></li>
         <li><label><input type="checkbox" class="mr-2">USE COUNT ATTACHMENTS UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">EQUIPMENT ICONS</label></li>
+        <li id="BACKUP SWITCH" class="hidden ml-6"><label class="text-blue-500"><label><input type="checkbox" class="mr-2">SEE REQUIREMENT FOR TESLA BACKUP SWITCH<a href="https://docs.google.com/presentation/d/1YzOKmeXQs2yAeo4BGXBlwUICOcQ69rST/edit?usp=drive_link&ouid=103890528928418308367&rtpof=true&sd=true" target="_blank" class="text-blue-500 ml-2">
+            <i class="fas fa-info-circle"></i> 
+	</a>
         <li><label><input type="checkbox" class="mr-2">CONDUIT</label></li>
         <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
 	</a>
@@ -123,6 +134,7 @@
         <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS EDIT THE ROW BELOW THE BATTERY NAME. DON'T LEAVE BLANK<a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
             <i class="fas fa-info-circle"></i> 
 	</a>
+	<li id="EXPANSION UNIT" class="hidden ml-6"><label class="text-blue-500"><label><input type="checkbox" class="mr-2">FOR TESLA POWERWALL 3 WITH EXPANSION UNIT, MAKE SURE THE EXPANSION UNIT IS INCLUDED IN THE EQUIPMENT SUMMARY.</label></li>	
 	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
 	</a>
     <h2 class="text-xl font-medium mb-3">PV1:</h2>
@@ -146,12 +158,11 @@
 	<li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li>
       </a>
 
-    <h2 class="text-xl font-medium mb-3">PVA</h2>
+    <h2 class="text-xl font-medium mb-3">PV2A</h2>
 	<li><label><input type="checkbox" class="mr-2">ADD NO DWELLING WINDOWS AND DOORS NOTE IF NEEDED</label>
   	<a href="https://drive.google.com/file/d/1lFHzU82W5TK-HyH9Q5HI7y0mJ0UAIP5r/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
     	<i class="fas fa-info-circle"></i>
       </a>
-
     <h2 class="text-xl font-medium mb-3">PV3</h2>
 	<li><label><input type="checkbox" class="mr-2">ATTACH THE CORRECT ATTACHMENT DWG</label></li>
 	<li><label><input type="checkbox" class="mr-2">UPDATE THE CALLOUTS ON THE DWG FILE IF NEEDED (EX.ROOF TYPE CALLOUT)</label></li>
@@ -198,6 +209,12 @@
    // Show Ridge Setbacks when Fresno is selected
    document.getElementById('ahjDropdown').addEventListener('change', (event) => {
        document.getElementById('ridgeSetback').classList.toggle('hidden', event.target.value !== 'Fresno');
+   });
+
+   // Show tesla backup switch when Powerwall 3 is selected
+   document.getElementById('utilityDropdown').addEventListener('change', (event) => {
+       document.getElementById('BACKUP SWITCH').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
+       document.getElementById('EXPANSION UNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
    });
 
    // Show Company Best Practices when a company is selected
