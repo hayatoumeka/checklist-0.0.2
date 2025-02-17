@@ -136,7 +136,7 @@
         <li><label><input type="checkbox" class="mr-2">FOR BATTERY JOBS EDIT THE ROW BELOW THE BATTERY NAME. DON'T LEAVE BLANK<a href="https://drive.google.com/file/d/1HaXtffQeKDW8jZxg19Um8syvUHzzeKX9/view?usp=drive_link" target="_blank" class="text-blue-500 ml-2">
             <i class="fas fa-info-circle"></i> 
         </a></label></li>
-        <li id="EXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">FOR TESLA POWERWALL 3 WITH EXPANSION UNIT, MAKE SURE THE EXPANSION UNIT IS INCLUDED IN THE EQUIPMENT SUMMARY.</label></li>	
+        <li id="EXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">FOR TESLA POWERWALL 3 WITH EXPANSION UNIT, MAKE SURE THE EXPANSION UNIT IS INCLUDED IN THE EQUIPMENT SUMMARY AND SYSTEM INFO.</label></li>	
         <li><label><input type="checkbox" class="mr-2">AHJ NOTES</label></li> 
       </ul>
       <h2 class="text-xl font-medium mb-3 text-left">PV1:</h2>
@@ -182,6 +182,7 @@
         <li><label><input type="checkbox" class="mr-2">WIRE TABLE</label></li>
         <li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
         <li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
+        <li id="BREAKERWITHEXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">USE 80A BREAKER FOR PW3, WHEN ADDING EXPANSION UNIT.</label></li>
         <li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
         <li><label><input type="checkbox" class="mr-2">GROUNDING LABEL</label></li>
         <li id="PGandEnotepv4" class="hidden ml-6"><label class="text-red-500"><input type="checkbox" class="mr-2">Show PG&E NOTE</label>
@@ -230,6 +231,7 @@
    document.getElementById('BatteryDropdown').addEventListener('change', (event) => {
        document.getElementById('BACKUPSWITCH').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
        document.getElementById('EXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
+       document.getElementById('"BREAKERWITHEXPANSIONUNIT"').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
    });
 
    // Show Company Best Practices when a company is selected
