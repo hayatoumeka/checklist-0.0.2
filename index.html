@@ -231,7 +231,7 @@
    document.getElementById('BatteryDropdown').addEventListener('change', (event) => {
        document.getElementById('BACKUPSWITCH').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
        document.getElementById('EXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
-       document.getElementById('"BREAKERWITHEXPANSIONUNIT"').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
+       document.getElementById('BREAKERWITHEXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
    });
 
    // Show Company Best Practices when a company is selected
