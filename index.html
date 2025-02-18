@@ -111,6 +111,8 @@
       <ul id="checklist" class="space-y-2 text-left text-sm">
         <li><label><input type="checkbox" class="mr-2">FILL OUT DWG PROPS UTC</label></li>
         <li><label><input type="checkbox" class="mr-2">AZIMUTH UTC</label></li>
+        <li><label><input type="checkbox" class="mr-2">DRAW THE HOUSE AND ANY DETACHED STRUCTURES</label></li>
+        <li><label><input type="checkbox" class="mr-2">CALL OUT THOSE STRUCTURES UNLESS THE AHJ NOTES SAY NOT TO.</label></li>
         <li><label><input type="checkbox" class="mr-2">DRAW HOUSE</label></li>
         <li><label><input type="checkbox" class="mr-2">PROPERTY LINE</label></li>
         <li><label><input type="checkbox" class="mr-2">FENCE</label></li>
@@ -183,6 +185,7 @@
         <li><label><input type="checkbox" class="mr-2">ENSURE AMBIENT TEMP IS CORRECT</label></li>
         <li><label><input type="checkbox" class="mr-2">REMOVE BREAKER SIZE IN THE OCPD CALCS IF NOT IN THE PLANSET</label></li>
         <li id="BREAKERWITHEXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">USE 80A BREAKER FOR PW3, WHEN ADDING EXPANSION UNIT.</label></li>
+        <li id="BATTERYCONFIGURATIONNOTEFOREXPANSIONUNIT" class="hidden ml-6"><label class="text-yellow-500"><input type="checkbox" class="mr-2">ADD A NOTE "NOTE: BATTERY WILL BE CONFIGURED TO OUTPUT 15.4 KW OFF GRID, REQUIRING AN 80A BREAKER IN MSP.</label></li>
         <li><label><input type="checkbox" class="mr-2">CHANGE THE “OUTPUT” TO “BACKFEED”</label></li>
         <li><label><input type="checkbox" class="mr-2">GROUNDING LABEL</label></li>
         <li id="PGandEnotepv4" class="hidden ml-6"><label class="text-red-500"><input type="checkbox" class="mr-2">Show PG&E NOTE</label>
@@ -232,6 +235,7 @@
        document.getElementById('BACKUPSWITCH').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
        document.getElementById('EXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
        document.getElementById('BREAKERWITHEXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
+       document.getElementById('BATTERYCONFIGURATIONNOTEFOREXPANSIONUNIT').classList.toggle('hidden', event.target.value !== 'POWERWALL 3');
    });
 
    // Show Company Best Practices when a company is selected
